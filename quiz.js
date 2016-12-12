@@ -2,7 +2,15 @@
 ///Objectives///
 ////////////////
 
-var color = "firebrick";
+// Flow
+  // load JSON file
+  // populate Page
+  // add event listeners once page is loaded
+
+var color = "firebrick"; // Must be a color reconized by CSS
+var inventory = []
+loadInventory()
+
 
 // Loads in the JSON and stores in a variable
 // Executed upon JSON file loading
