@@ -1,3 +1,26 @@
 body {
   padding-top: 70px;
 }
+
+.product-card {
+  border: solid black 1px;
+}
+
+.product-card img {
+  max-width: 100%;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+/* Match card heights on md screen size and higher */
+/* Forcing bootsrap grid to behave like table */
+/*@media only screen and (min-width : 970px) {
+    .is-table-row {
+        display: table;
+    }
+    .is-table-row [class*="col-"] {
+        float: none;
+        display: table-cell;
+        vertical-align: top;
+    }
+}*/

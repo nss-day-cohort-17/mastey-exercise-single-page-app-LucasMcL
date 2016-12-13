@@ -10,6 +10,8 @@
 var color = "firebrick"; // Must be a color reconized by CSS
 var inventory = []
 loadInventory()
+//Execute this function call after DOM loaded
+$('.product-card').matchHeight()
 
 
 // Loads in the JSON and stores in a variable
@@ -24,10 +26,8 @@ function populatePage() {
 
 }
 
-// Executed at the very beginning
-// Adds all the event listeners
+// Adds all the event listeners on DOM
 function activateEvents() {
-  // Listen for JSON file to load
   // Listen for click event on card
   // Listen for description to be updated (so border can go away)
 
@@ -45,7 +45,7 @@ function resetBorder() {
 // Takes a color variable and manually changes CSS?
   // Would be better if it changed class and color was changed in CSS file
   // But...I will follow instructions
-function changeCardBorder(node, color) {
+function makeCardBorder(node, color) {
 
 }
 
