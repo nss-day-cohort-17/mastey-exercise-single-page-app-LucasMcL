@@ -130,7 +130,10 @@ function activateEvents() {
 // Executed when car description is changed (enter pressed)
 // Executed when a new car is selected
 function resetBorder() {
-
+  var productCards = document.querySelectorAll(".product-card")
+  for(var i = 0; i < productCards.length; i++) {
+    productCards[i].classList.remove("highlight")
+  }
 }
 
 // Executed whenever a click occurs anywhere?
@@ -140,7 +143,7 @@ function resetBorder() {
   // Would be better if it changed class and color was changed in CSS file
   // But...I will follow instructions
 function makeCardBorder(node, color) {
-  console.dir(node)
+  resetBorder();
   node.classList.add("highlight")
 }
 
