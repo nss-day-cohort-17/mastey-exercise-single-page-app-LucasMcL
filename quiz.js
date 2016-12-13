@@ -27,14 +27,11 @@ function loadInventory() {
 }
 
 // Function to populate the page
-// Executed after loadIventory?
+// Executed after loadIventory
 function populatePage() {
-  var myHTML = ""
-  myHTML += '<div class="row">'
+  // Init html string by starting first row
+  var myHTML = '<div class="row">'
   // Loop over length of array and generate HTML string
-  // After 3 loops, add </div><div class="row">
-  // At the end, add </div>
-  // We don't want to add </div><div class="row"> if it's the last row
   for(var i = 0; i < inventory.cars.length; i++) {
     myHTML += `
     <div class="col-md-4 product-card">
@@ -62,16 +59,47 @@ function populatePage() {
         </tr>
       </table>
     </div>`
+    // Closes current row every 3 loops
     if((i + 1) % 3 === 0) {
       myHTML += '</div>'
-      // If our current car is NOT the last car
+      // Adds new row if we are NOT on last car
       if((i + 1) != inventory.cars.length) {
         myHTML += '<div class="row">'
       }
     }
+    // If we're at the end and not on a 3rd car, close the row
+    // If we are on a 3rd car, it will close from previous if statement
+    else {
+      if((i + 1) === inventory.cars.length) {
+        myHTML += '</div>'
+      }
+    }
   }
-  console.log(myHTML)
+  document.getElementById('product-container').innerHTML = myHTML
+  $('.product-card').matchHeight()
 }
+
+// Every 3 cars
+  // Close current row
+  // If not last car
+    // Start new row
+  // If it was the last car...
+    // Don't do anything.  Row was just closed.
+// At the end
+  // Close current row
+  // Unless you just closed it from being a 3rd car
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Adds all the event listeners on DOM
 function activateEvents() {
