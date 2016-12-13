@@ -7,8 +7,9 @@
   // populate Page
   // add event listeners once page is loaded
 
-var color = "firebrick"; // Must be a color reconized by CSS
 var inventory = []
+var idCounter = 0; // create each product card with unique ID
+var currentId
 loadInventory()
 //Execute this function call after DOM loaded
 $('.product-card').matchHeight()
@@ -34,7 +35,7 @@ function populatePage() {
   // Loop over length of array and generate HTML string
   for(var i = 0; i < inventory.cars.length; i++) {
     myHTML += `
-    <div class="col-md-4 product-card">
+    <div class="col-md-4 product-card" id="${idCounter}">
       <img src="${inventory.cars[i].image}" alt="car">
       <table>
         <tr>
@@ -74,9 +75,11 @@ function populatePage() {
         myHTML += '</div>'
       }
     }
+    idCounter++
   }
   document.getElementById('product-container').innerHTML = myHTML
   $('.product-card').matchHeight()
+  activateEvents()
 }
 
 // Every 3 cars
@@ -90,26 +93,42 @@ function populatePage() {
   // Unless you just closed it from being a 3rd car
 
 
-
-
-
-
-
-
-
-
-
-
-
 // Adds all the event listeners on DOM
 function activateEvents() {
   // Listen for click event on card
-  // Listen for description to be updated (so border can go away)
+    // Focus on the input field
+    // Remove styling on any other card
+  // Listen for typing in the input field to update description
+    // On Key up?
+  // Listen for the enter button to be pressed
+    // Stop highlighting current product card
+    // Stop giving it a background color
+    // Clear input field
+    // Stop matching the description text to the input text
+  // Maybe generate cards with IDs?
+    // store id of product currently being edited
+
+
+  document.querySelector("body").addEventListener("click", function(clickEvt) {
+
+    // Loop through parent nodes to see if any of them contain class = product card
+    // Stop at document
+    // Passes product card node to makeCardBorder
+    var currentNode = clickEvt.target
+    while(currentNode != document) {
+      if(currentNode.classList.contains("product-card")) {
+        makeCardBorder(currentNode);
+        break;
+      }
+      currentNode = currentNode.parentNode
+    }
+  });
+
 
 }
 
 // Executed when car description is changed (enter pressed)
-// (Optional) Executed when focus is lost?
+// Executed when a new car is selected
 function resetBorder() {
 
 }
@@ -121,7 +140,8 @@ function resetBorder() {
   // Would be better if it changed class and color was changed in CSS file
   // But...I will follow instructions
 function makeCardBorder(node, color) {
-
+  console.dir(node)
+  node.classList.add("highlight")
 }
 
 
