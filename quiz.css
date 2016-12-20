@@ -7,15 +7,23 @@ body {
 }
 
 .product-card img {
-  max-width: 100%;
+  width: 100%;
   padding-left: 5%;
   padding-right: 5%;
+  margin-bottom: 20px;
 }
 
 .highlight {
   background-color: yellow;
   border: solid black 5px;
 }
+
+td:nth-child(1) {
+  font-weight: bold;
+  padding-right: 5px;
+}
+
+
 
 /* Match card heights on md screen size and higher */
 /* Forcing bootsrap grid to behave like table */
