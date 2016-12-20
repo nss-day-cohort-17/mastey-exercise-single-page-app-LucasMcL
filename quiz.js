@@ -115,12 +115,11 @@ function activateEvents() {
     // Stop at document
     // Passes product card node to makeCardBorder
     var currentNode = clickEvt.target
-    while(currentNode != document) {
-      if(currentNode.classList.contains("product-card")) {
-        makeCardBorder(currentNode);
-        break;
+    var productCards = document.querySelectorAll(".product-card")
+    for(var i = 0; i < productCards.length; i++) {
+      if (productCards[i].contains(currentNode)) {
+        makeCardBorder(productCards[i])
       }
-      currentNode = currentNode.parentNode
     }
   });
 

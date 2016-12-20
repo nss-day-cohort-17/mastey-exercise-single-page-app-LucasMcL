@@ -31,22 +31,6 @@
       "year": "1998",
       "price": "$5,000.00",
       "description": "Runs like new.  Engine will not die.  Door locks are possessed by a demon."
-    },
-    {
-      "image": "http://www.thetorquereport.com/08rogue204.jpg",
-      "make": "Nissan",
-      "model": "Rogue",
-      "year": "2006",
-      "price": "$8999.99",
-      "description": "This is an immaculate 2006 Nissan Rogue with only 25000 miles on it. Leather seats, power everything."
-    },
-    {
-      "image": "https://media.ed.edmunds-media.com/mercury/sable/1995/oem/1995_mercury_sable_sedan_gs_fq_oem_1_400.jpg",
-      "make": "Mercury",
-      "model": "Sable",
-      "year": "1995",
-      "price": "$2499.95",
-      "description": "This car is held together with duck tape and used chewing gum."
     }
   ]
 }

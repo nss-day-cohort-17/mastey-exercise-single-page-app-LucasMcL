@@ -12,6 +12,11 @@ body {
   padding-right: 5%;
 }
 
+.highlight {
+  background-color: yellow;
+  border: solid black 5px;
+}
+
 /* Match card heights on md screen size and higher */
 /* Forcing bootsrap grid to behave like table */
 /*@media only screen and (min-width : 970px) {
