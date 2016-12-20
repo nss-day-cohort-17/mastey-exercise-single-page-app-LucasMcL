@@ -7,6 +7,9 @@
   // populate Page
   // add event listeners once page is loaded
 
+// To do: remove vanilla javascript methods for traversing and manipulating DOM
+// Replace with jQuery
+
 var inventory = []
 var idCounter = 0; // create each product card with unique ID
 var currentId
@@ -111,16 +114,16 @@ function activateEvents() {
 
   document.querySelector("body").addEventListener("click", function(clickEvt) {
 
-    // Loop through parent nodes to see if any of them contain class = product card
-    // Stop at document
-    // Passes product card node to makeCardBorder
-    var currentNode = clickEvt.target
-    var productCards = document.querySelectorAll(".product-card")
-    for(var i = 0; i < productCards.length; i++) {
-      if (productCards[i].contains(currentNode)) {
-        makeCardBorder(productCards[i])
+    // Loops through array of product card elements
+    // Checks to see if thing you clicked on is contained in product card
+    // If so, apply border to that product card
+    var clickTarget = clickEvt.target
+    $('.product-card').each( function(index, elem) {
+      if( $.contains(elem, clickTarget)) {
+        makeCardBorder(elem)
+        $('.input-text').val('').focus()
       }
-    }
+    })
   });
 
 
@@ -129,10 +132,7 @@ function activateEvents() {
 // Executed when car description is changed (enter pressed)
 // Executed when a new car is selected
 function resetBorder() {
-  var productCards = document.querySelectorAll(".product-card")
-  for(var i = 0; i < productCards.length; i++) {
-    productCards[i].classList.remove("highlight")
-  }
+  $('.product-card').removeClass('highlight');
 }
 
 // Executed whenever a click occurs anywhere?
