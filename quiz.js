@@ -59,7 +59,7 @@ function populatePage() {
         </tr>
         <tr>
           <td>Description: </td>
-          <td>${inventory.cars[i].description}</td>
+          <td class="description">${inventory.cars[i].description}</td>
         </tr>
       </table>
     </div>`
@@ -98,9 +98,6 @@ function populatePage() {
 
 // Adds all the event listeners on DOM
 function activateEvents() {
-  // Listen for click event on card
-    // Focus on the input field
-    // Remove styling on any other card
   // Listen for typing in the input field to update description
     // On Key up?
   // Listen for the enter button to be pressed
@@ -112,19 +109,33 @@ function activateEvents() {
     // store id of product currently being edited
 
 
-  document.querySelector("body").addEventListener("click", function(clickEvt) {
-
-    // Loops through array of product card elements
-    // Checks to see if thing you clicked on is contained in product card
-    // If so, apply border to that product card
+  $('body').click( function(clickEvt) {
     var clickTarget = clickEvt.target
+    // Uses .each method to loop over jQuery object of product cards
+    // Checks to see if thing clicked on is descendant of product card div
+    // OR if it is the product card div itself
     $('.product-card').each( function(index, elem) {
-      if( $.contains(elem, clickTarget)) {
+      if( $.contains(elem, clickTarget) || $(elem).is($(clickTarget))) {
         makeCardBorder(elem)
         $('.input-text').val('').focus()
+        currentId = elem.id
+        $(elem).find('.description').html('')
       }
     })
   });
+
+  $('.input-text').keyup( function(keyEvt) {
+    // Upon Keyup, description of currently selected car is matched to the value of the input element
+    var inputVal = $('.input-text').val()
+    $(`#${currentId}`).find('.description').html(inputVal)
+    // Enter removes the highlighting from the current vehicle
+    // It resets the currentID variable
+    if(keyEvt.key === "Enter") {
+      $('.input-text').val('')
+      currentId = undefined
+      resetBorder()
+    }
+  })
 
 
 }
