@@ -1,0 +1,40 @@
+body {
+  padding-top: 70px;
+}
+
+.col-md-4 {
+  margin-bottom: 30px
+}
+
+.product-card {
+  border: solid black 1px;
+  background-color: #fff;
+  padding: 0 10px 10px 10px;
+}
+
+.product-card img {
+  width: 100%;
+  padding-left: 5%;
+  padding-right: 5%;
+  margin-bottom: 20px;
+}
+
+.highlight {
+  background-color: yellow;
+  border: solid black 5px;
+}
+
+td:nth-child(1) {
+  font-weight: bold;
+  padding-right: 5px;
+}
+
+body {
+  background-image: url('../img/squared_metal.png')
+}
+
+
+
+
+
+
