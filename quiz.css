@@ -2,8 +2,14 @@ body {
   padding-top: 70px;
 }
 
+.col-md-4 {
+  margin-bottom: 30px
+}
+
 .product-card {
   border: solid black 1px;
+  background-color: #fff;
+  padding: 0 10px 10px 10px;
 }
 
 .product-card img {
@@ -23,17 +29,12 @@ td:nth-child(1) {
   padding-right: 5px;
 }
 
+body {
+  background-image: url('../img/squared_metal.png')
+}
 
 
-/* Match card heights on md screen size and higher */
-/* Forcing bootsrap grid to behave like table */
-/*@media only screen and (min-width : 970px) {
-    .is-table-row {
-        display: table;
-    }
-    .is-table-row [class*="col-"] {
-        float: none;
-        display: table-cell;
-        vertical-align: top;
-    }
-}*/
+
+
+
+

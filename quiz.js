@@ -38,30 +38,32 @@ function populatePage() {
   // Loop over length of array and generate HTML string
   for(var i = 0; i < inventory.cars.length; i++) {
     myHTML += `
-    <div class="col-md-4 product-card" id="${idCounter}">
-      <img src="${inventory.cars[i].image}" alt="car">
-      <table>
-        <tr>
-          <td>Make: </td>
-          <td>${inventory.cars[i].make}</td>
-        </tr>
-        <tr>
-          <td>Model: </td>
-          <td>${inventory.cars[i].model}</td>
-        </tr>
-        <tr>
-          <td>Year: </td>
-          <td>${inventory.cars[i].year}</td>
-        </tr>
-        <tr>
-          <td>Price: </td>
-          <td>${inventory.cars[i].price}</td>
-        </tr>
-        <tr>
-          <td>Description: </td>
-          <td class="description">${inventory.cars[i].description}</td>
-        </tr>
-      </table>
+    <div class="col-md-4">
+      <div class="product-card" id="${idCounter}">
+        <img src="${inventory.cars[i].image}" alt="car">
+        <table>
+          <tr>
+            <td>Make: </td>
+            <td>${inventory.cars[i].make}</td>
+          </tr>
+          <tr>
+            <td>Model: </td>
+            <td>${inventory.cars[i].model}</td>
+          </tr>
+          <tr>
+            <td>Year: </td>
+            <td>${inventory.cars[i].year}</td>
+          </tr>
+          <tr>
+            <td>Price: </td>
+            <td>${inventory.cars[i].price}</td>
+          </tr>
+          <tr>
+            <td>Description: </td>
+            <td class="description">${inventory.cars[i].description}</td>
+          </tr>
+        </table>
+      </div>
     </div>`
     // Closes current row every 3 loops
     if((i + 1) % 3 === 0) {
